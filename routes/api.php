@@ -24,6 +24,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::put('product/{id}', 'Api\ProductController@store');
 // Route::delete('product/{id}', 'Api\ProductController@delete');
 Route::resource('product', 'Api\ProductController');
-
 Route::get('categories', 'CategoryController@index');
+
 Route::post('categories', 'CategoryController@store');
+
+Route::post('login', 'api\UserController@login');
+Route::post('register', 'api\UserController@register');
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::post('details', 'api\UserController@details');
+});

@@ -177,6 +177,7 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*
